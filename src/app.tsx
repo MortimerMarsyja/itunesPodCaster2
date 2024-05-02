@@ -1,12 +1,10 @@
-import TriggerHappy from "@components/triggerHappy";
-import WaveCollapse from "@components/waveCollapse";
 import "./app.css";
+import PodcastList from "@views/podcastList";
 
 export function App() {
   return (
     <>
-      <TriggerHappy>Uppity</TriggerHappy>
-      <WaveCollapse />
+      <PodcastList />
     </>
   );
 }
