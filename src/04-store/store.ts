@@ -7,26 +7,21 @@ type iOption = {
 
 function itemStore<T>(value: T) {
   const itemSignal = signal(value);
-  const extractSignal = () => itemSignal;
-  return {
-    extractSignal,
-  };
+  return itemSignal;
 }
 
 const globalStore = <T extends Object>(obj: T) => {
   const store: { [K in keyof T]: Signal<T[K]> } = {} as any;
   Object.entries(obj).forEach(([key, value]) => {
-    store[key as keyof T] = itemStore(value).extractSignal();
+    store[key as keyof T] = itemStore(value);
   });
 
-  const findSignal = <K extends keyof T>(key: K): Signal<T[K]> => {
-    const keyAsString = String(key);
-    const signal = store[key];
-    if (!signal) throw new Error(`Signal not found for key: ${keyAsString}`);
-    return signal;
-  };
+  // store obj {key: signal}
+  function findSignal<K extends keyof T>(key: K) {
+    return store[key];
+  }
 
-  return { findSignal };
+  return findSignal;
 };
 
 type iStore = {
