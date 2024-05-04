@@ -1,10 +1,9 @@
 import "./app.css";
-import PodcastList from "@views/podcastList";
-
+import PodCastList from "@views/podcastList/podcastList";
 export function App() {
   return (
     <>
-      <PodcastList />
+      <PodCastList />
     </>
   );
 }
