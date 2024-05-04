@@ -1,4 +1,7 @@
+//todo: extract this into a small global state signals library
+
 import { Signal, signal } from "@preact/signals";
+import iEntries from "@types/iEntries";
 
 type iOption = {
   name: string;
@@ -16,7 +19,6 @@ const globalStore = <T extends Object>(obj: T) => {
     store[key as keyof T] = itemStore(value);
   });
 
-  // store obj {key: signal}
   function findSignal<K extends keyof T>(key: K) {
     return store[key];
   }
@@ -27,11 +29,13 @@ const globalStore = <T extends Object>(obj: T) => {
 type iStore = {
   count: number;
   options: iOption[];
+  entries: iEntries[];
 };
 
 const store = globalStore<iStore>({
   count: 0,
   options: [],
+  entries: [],
 });
 
 export default store;

@@ -1,17 +1,13 @@
 import { FunctionComponent } from "preact";
 
 const MainLayout: FunctionComponent = ({ children }) => {
-  //todo: define styles after choosing library
   return (
     <div
       style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100vh",
-        fontFamily: "sans-serif",
+        height: "100%",
+        overflowY: "auto",
       }}
+      class="flex flex-wrap w-full h-full bg-slate-400"
     >
       {children}
     </div>
