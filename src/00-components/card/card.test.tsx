@@ -14,9 +14,7 @@ const TestCard = () => {
       cover={catTestImg}
       size="medium"
       title="test-title"
-    >
-      Test Content
-    </Card>
+    />
   );
 };
 
