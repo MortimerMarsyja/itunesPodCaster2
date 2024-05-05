@@ -1,16 +1,9 @@
 import { FunctionComponent } from "preact";
 
-export type HeaderProps = {
-  title: string;
-};
-
-const Header: FunctionComponent<{ title: HeaderProps }> = ({
-  title,
-  children,
-}) => {
+const Header: FunctionComponent<{ title: string }> = ({ title, children }) => {
   return (
-    <div class="flex justify-center">
-      <h1 class="m-3">{title}</h1>
+    <div class="flex justify-start p-2 shadow-md w-full">
+      <h3 class="ml-3 text-blue-400">{title}</h3>
       {children}
     </div>
   );

@@ -1,4 +1,5 @@
 import { FunctionComponent } from "preact";
+import Header from "@components/header";
 
 const MainLayout: FunctionComponent = ({ children }) => {
   return (
@@ -9,6 +10,7 @@ const MainLayout: FunctionComponent = ({ children }) => {
       }}
       class="flex flex-wrap w-full h-full bg-slate-400"
     >
+      <Header title="Podcast List"></Header>
       {children}
     </div>
   );
