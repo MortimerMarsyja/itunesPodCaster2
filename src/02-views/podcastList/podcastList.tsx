@@ -2,7 +2,6 @@ import fetchWithCache from "@utils/fetchWithCache";
 import { iEntries } from "@definitions/iEntries";
 import { useEffect } from "preact/hooks";
 import Card from "@components/card";
-import MainLayout from "@layouts/main/mainLayout";
 import store from "@store/store";
 import { JSX } from "preact";
 import { signal } from "@preact/signals";
@@ -20,7 +19,7 @@ const PodCastList = () => {
   }, []);
   const { result } = useFilterEntries({ activeFilter: filter.value });
   return (
-    <MainLayout>
+    <>
       <div class="w-full flex justify-end items-center">
         <span>{result.length}</span>
         <input
@@ -42,7 +41,7 @@ const PodCastList = () => {
           />
         ))}
       </div>
-    </MainLayout>
+    </>
   );
 };
 
