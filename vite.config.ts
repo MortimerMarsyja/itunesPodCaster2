@@ -1,9 +1,10 @@
 import { defineConfig } from "vite";
 import preact from "@preact/preset-vite";
+import { TanStackRouterVite } from "@tanstack/router-vite-plugin";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [preact()],
+  plugins: [preact(), TanStackRouterVite()],
   resolve: {
     preserveSymlinks: true,
     // TODO remove from here when migrated to typescript and styled-components
