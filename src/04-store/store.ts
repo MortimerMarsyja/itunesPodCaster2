@@ -3,11 +3,6 @@
 import { Signal, signal } from "@preact/signals";
 import iEntries from "@types/iEntries";
 
-type iOption = {
-  name: string;
-  value: string;
-};
-
 function itemStore<T>(value: T) {
   const itemSignal = signal(value);
   return itemSignal;
@@ -27,14 +22,10 @@ const globalStore = <T extends Object>(obj: T) => {
 };
 
 type iStore = {
-  count: number;
-  options: iOption[];
   entries: iEntries[];
 };
 
 const store = globalStore<iStore>({
-  count: 0,
-  options: [],
   entries: [],
 });
 
