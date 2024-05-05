@@ -1,7 +1,7 @@
 //todo: extract this into a small global state signals library
 
 import { Signal, signal } from "@preact/signals";
-import iEntries from "@types/iEntries";
+import { iEntries } from "@definitions/iEntries";
 
 function itemStore<T>(value: T) {
   const itemSignal = signal(value);

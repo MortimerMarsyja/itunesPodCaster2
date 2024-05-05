@@ -1,5 +1,5 @@
 import store from "@store/store";
-import iEntries from "@types/iEntries";
+import { iEntries } from "@definitions/iEntries";
 
 const entries = store("entries");
 

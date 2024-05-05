@@ -30,7 +30,7 @@ export interface ImgInfo {
   label: string;
 }
 
-type iEntries = {
+export type iEntries = {
   "im:name": {
     label: string;
   };
@@ -64,5 +64,3 @@ type iEntries = {
     attributes: Icon;
   };
 };
-
-export default iEntries;
