@@ -1,5 +1,5 @@
 import fetchWithCache from "@utils/fetchWithCache";
-import iEntries from "@types/iEntries";
+import { iEntries } from "@definitions/iEntries";
 import { useEffect } from "preact/hooks";
 import Card from "@components/card";
 import MainLayout from "@layouts/main/mainLayout";

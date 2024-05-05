@@ -32,7 +32,7 @@
       "@store/*": ["src/04-store/*"],
       "@services/*": ["src/08-services/*"],
       "@templates/*": ["src/07-templates/*"],
-      "@types/*": ["src/06-types/*"],
+      "@definitions/*": ["src/06-types/*"],
       "@utils/*": ["src/05-utils/*"],
       "@views/*": ["src/02-views/*"],
     },

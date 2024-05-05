@@ -17,7 +17,7 @@ export default defineConfig({
       "@containers": "/src/01-containers",
       "@components": "/src/00-components",
       "@constants": "/src/09-constants",
-      "@types": "/src/06-types",
+      "@definitions": "/src/06-types",
       "@assets": "/src/assets",
       "@services": "/src/08-services",
     },
