@@ -25,7 +25,7 @@ const PodCastList = () => {
         <span>{result.length}</span>
         <input
           class="rounded-md w-36 h-8 m-4"
-          onKeyDown={(evt: JSX.TargetedEvent<HTMLInputElement, Event>) => {
+          onKeyUp={(evt: JSX.TargetedEvent<HTMLInputElement, Event>) => {
             const target = evt.target as HTMLInputElement;
             filter.value = target.value;
           }}
