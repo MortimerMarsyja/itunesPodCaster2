@@ -1,7 +1,7 @@
 async function fetchWithCache(url: string) {
   const key = btoa(url);
   const hasKey = await window.caches.has(key);
-  const expirationTime = Date.now() + 1000 * 60;
+  const expirationTime = Date.now() + 1000 * 60 * 60 * 24;
 
   if (hasKey) {
     const cache = await window.caches.open(key);
@@ -22,10 +22,13 @@ async function fetchWithCache(url: string) {
     });
     cache.put(key, cacheData);
 
-    setTimeout(async () => {
-      const cache = await window.caches.open(key);
-      cache.delete(key);
-    }, 1000 * 60 * 60 * 24);
+    setTimeout(
+      async () => {
+        const cache = await window.caches.open(key);
+        cache.delete(key);
+      },
+      1000 * 60 * 60 * 24
+    );
   }
   return data;
 }

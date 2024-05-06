@@ -1,0 +1,28 @@
+export type iEpisode = {
+  artistIds: string[];
+  artworkUrl160: string;
+  artworkUrl60: string;
+  artworkUrl600: string;
+  closedCaptioning: string;
+  collectionId: number;
+  collectionName: string;
+  collectionViewUrl: string;
+  contentAdvisoryRating?: string;
+  country: string;
+  description: string;
+  episodeContentType: string;
+  episodeFileExtension: string;
+  episodeGuid: string;
+  episodeUrl: string;
+  feedUrl: string;
+  genres: Genre[];
+  kind: string;
+  previewUrl: string;
+  releaseDate: Date;
+  shortDescription: string;
+  trackId: number;
+  trackName: string;
+  trackTimeMillis: number;
+  trackViewUrl: string;
+  wrapperType: string;
+};

@@ -1,3 +1,4 @@
+import { useNavigate } from "@tanstack/react-router";
 import cardStyles from "./styles";
 
 export type CardProps = {
@@ -5,16 +6,25 @@ export type CardProps = {
   title: string;
   artist: string;
   size: "small" | "medium";
+  route: string;
 };
 
-const Card = ({ cover, title, artist, size }: CardProps) => {
+const Card = ({ cover, title, artist, size, route }: CardProps) => {
+  const navigate = useNavigate();
   const className = `${cardStyles({
     size,
-  })} bg-red-500 flex flex-col justify-end items-center w-52 h-24 relative m-20 rounded-[4px] shadow-md`;
+  })} bg-red-500 flex flex-col justify-end items-center w-52 h-24 relative m-20 rounded-[4px] shadow-md cursor-pointer`;
   const authority = `by ${artist}`;
   const imgSize = 80;
   return (
-    <div class={className}>
+    <div
+      onClick={() =>
+        navigate({
+          to: route,
+        })
+      }
+      class={className}
+    >
       <div class="rounded-full overflow-hidden absolute bottom-16">
         <img width={imgSize} height={imgSize} src={cover} alt={title} />
       </div>

@@ -1,4 +1,3 @@
-import fetchWithCache from "@utils/fetchWithCache";
 import { iEntries } from "@definitions/iEntries";
 import { useEffect } from "preact/hooks";
 import Card from "@components/card";
@@ -6,14 +5,13 @@ import store from "@store/store";
 import { JSX } from "preact";
 import { signal } from "@preact/signals";
 import useFilterEntries from "@hooks/useFilterEntries";
+import getPodcastList from "@services/getPodcastList";
 
 const filter = signal("");
 
-const url =
-  "https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json";
 const PodCastList = () => {
   useEffect(() => {
-    fetchWithCache(url).then((fetchedData) => {
+    getPodcastList().then((fetchedData) => {
       store("entries").value = fetchedData.feed.entry;
     });
   }, []);
@@ -38,6 +36,7 @@ const PodCastList = () => {
             title={podcast["im:name"].label}
             size="small"
             key={podcast.id}
+            route={`/podcast/${podcast.id.attributes["im:id"]}`}
           />
         ))}
       </div>
